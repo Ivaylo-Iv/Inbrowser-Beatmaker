@@ -19,6 +19,7 @@ class DrumKit {
   activePad() {
     this.classList.toggle("active");
   }
+
   repeat() {
     let step = this.index % 8;
     const activeBars = document.querySelectorAll(`.b${step}`);
@@ -39,9 +40,11 @@ class DrumKit {
         }
       }
     });
+
     console.log("1");
     this.index++;
   }
+
   start() {
     const interval = (60 / this.bpm) * 1000;
 
@@ -73,6 +76,7 @@ class DrumKit {
         this.hihatAudio.src = selectionValue;
     }
   }
+
   mute(e) {
     const muteIndex = e.target.getAttribute("data-track");
     e.target.classList.toggle("active");
@@ -103,6 +107,7 @@ class DrumKit {
       }
     }
   }
+
   changeTempo(e) {
     const tempoText = document.querySelector(".tempo-nr");
     this.bpm = e.target.value;
@@ -125,6 +130,7 @@ drumKit.pads.forEach((pad) => {
     this.style.animation = "";
   });
 });
+
 drumKit.playBtn.addEventListener("click", () => {
   drumKit.start();
 });
