@@ -40,8 +40,6 @@ class DrumKit {
         }
       }
     });
-
-    console.log("1");
     this.index++;
   }
 
